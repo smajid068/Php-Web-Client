@@ -4,6 +4,7 @@ require_once "auth.php";
 require_once "generatePdfFromHtmlString.php";
 require_once "downloadPdf.php";
 require_once "generatePdfFromHtmlUrl.php";
+require_once "downloadPdfAsImages.php";
 
 
 // Main script execution
@@ -21,6 +22,8 @@ $token = getToken($username, $password);
 //b) Step 2: Generate the PDF from a Webpage URL using IronPDF
 $generatedFileDownloadUrl = generatePdfFromHtmlUrl($webUrl, $token);
 
-//Download the PDF from URL in PHP
-downloadPdf($generatedFileDownloadUrl);
+//a) Step 3: Download the PDF from URL in PHP
+//downloadPdf($generatedFileDownloadUrl);
 
+//b) Step 3: Download the PDF as images
+downloadPdfAsImages($generatedFileDownloadUrl, $token);
