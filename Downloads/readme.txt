@@ -1,0 +1,1 @@
+All downloaded pdfs and images generated from IronPDF are saved here.
